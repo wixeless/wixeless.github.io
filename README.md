@@ -1,37 +1,21 @@
-## Welcome to GitHub Pages
+## Welcome to Jahongir's Page
 
-You can use the [editor on GitHub](https://github.com/jahongir28/jahongir28.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+# About
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Android developer
+Within more than 3 years I'm involved in Android development. One of my main skills is to create professional, responsive, intuitive mobile applications for Android. I do my work with the full dedication and strive for excellent quality
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/jahongir28/jahongir28.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+- Good understanding of Java and Kotlin, concepts (oops, collections and multithreading)
+- Experience with Android Architecture Components and MVVM pattern
+- Experience working with different versions of Android API, and how to deal with different screen sizes
+- Familiarity with RESTful APIs to connect Android applications to back-end services (Retrofit, OkHttp)
+- Experience with offline database storage (Sqlite, Room)
+- Android SDK (Fragment API, Service API, BroadcastReceiver, Job Scheduler API, WorkManager API)
+- Image processing (Picasso, Glide)
+- JSON serialization/deserialization (moshi, gson)
+- Google Play Services (Maps/Places, Location, GCM, AdMob/DFP)
+- Firebase (Auth, Database, Notifications, Analytics, Crash Reporting etc.)
+- Social networks (Facebook SDK, Twitter SDK, Instagram SDK, Vkontakte SDK,)
+- Proficient understanding of code versioning tools, such as Git
+- Strong knowledge of Android UI design principles, patterns, and best practices (Support libraries, Custom views, Custom themes/styles)
+- Experience with Day/Night mode
