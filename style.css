@@ -299,6 +299,43 @@ h2 {
   margin: 0;
 }
 
+.apps-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  gap: 1.5rem 3rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.app {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+}
+
+.app img {
+  flex: none;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 22%;
+  box-shadow: 0 0 0 1px var(--line);
+}
+
+.app-name {
+  display: block;
+  font-size: var(--step-1);
+  font-weight: 600;
+}
+
+.app-desc {
+  display: block;
+  color: var(--muted);
+}
+
+.app:hover .app-name { color: var(--accent); }
+
 .skills {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
