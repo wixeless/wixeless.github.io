@@ -15,7 +15,7 @@
   --step-0: 1.0625rem;
   --step-1: 1.3rem;
   --step-2: clamp(1.6rem, 1.2rem + 1.6vw, 2.2rem);
-  --step-3: clamp(3.2rem, 1.4rem + 7.5vw, 7rem);
+  --step-3: clamp(2.6rem, 1.2rem + 5vw, 5rem);
 
   color-scheme: light;
   box-sizing: border-box;

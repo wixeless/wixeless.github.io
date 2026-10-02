@@ -37,7 +37,6 @@
         I build fast, responsive Android apps that stay light on memory
         and battery, and feel natural from the first tap.
       </p>
-      <!-- Replace these with your real links. -->
       <ul class="links">
         <li><a href="https://github.com/wixeless">GitHub</a></li>
         <li><a href="https://www.linkedin.com/in/wixeless">LinkedIn</a></li>
@@ -47,7 +46,7 @@
     <figure class="device" aria-label="Theme switcher styled as a phone">
       <div class="phone">
         <div class="screen">
-          <div class="status" aria-hidden="true"><span>9:41</span><span class="camera"></span><span>100%</span></div>
+          <div class="status" aria-hidden="true"><span id="clock">12:00</span><span class="camera"></span><span>100%</span></div>
           <div class="sky" aria-hidden="true"><span class="orb"></span></div>
           <button class="setting" id="theme-switch" type="button" role="switch" aria-checked="false">
             <span>Dark theme</span>
@@ -119,8 +118,8 @@
     <h2 id="contact-title">Get in touch</h2>
     <p>Have an Android project or a role in mind? Reach out on LinkedIn or check my work on GitHub.</p>
     <ul class="links">
-      <li><a href="https://www.linkedin.com/in/your-profile">LinkedIn</a></li>
-      <li><a href="https://github.com/your-username">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/wixeless">LinkedIn</a></li>
+      <li><a href="https://github.com/wixeless">GitHub</a></li>
     </ul>
   </section>
 
@@ -141,13 +140,71 @@
     nightMode.textContent = isDark ? "MODE_NIGHT_YES" : "MODE_NIGHT_NO";
   }
 
-  themeSwitch.addEventListener("click", function () {
+  function toggleTheme() {
     const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
     applyTheme(nextTheme);
     try { localStorage.setItem("theme", nextTheme); } catch (e) {}
-  });
+  }
 
+  const clock = document.getElementById("clock");
+  // Time zones of regions where the 12-hour clock is the everyday format.
+  const twelveHourZones = new Set([
+    "America/New_York", "America/Chicago", "America/Denver", "America/Phoenix",
+    "America/Los_Angeles", "America/Anchorage", "America/Juneau", "America/Adak",
+    "America/Detroit", "America/Boise", "America/Menominee", "Pacific/Honolulu",
+    "America/Toronto", "America/Vancouver", "America/Edmonton", "America/Winnipeg",
+    "America/Halifax", "America/St_Johns", "America/Regina",
+    "Pacific/Auckland", "Asia/Kolkata", "Asia/Calcutta", "Asia/Karachi",
+    "Asia/Dhaka", "Asia/Manila", "Africa/Cairo"
+  ]);
+  const twelveHourZonePrefixes = [
+    "Australia/", "America/Indiana/", "America/Kentucky/", "America/North_Dakota/"
+  ];
+
+  function usesTwelveHourClock(timeZone) {
+    function hasPrefix(prefix) {
+      return timeZone.startsWith(prefix);
+    }
+
+    if (twelveHourZones.has(timeZone)) {
+      return true;
+    }
+    return twelveHourZonePrefixes.some(hasPrefix);
+  }
+
+  const visitorTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  const isTwelveHour = usesTwelveHourClock(visitorTimeZone);
+  const hourCycle = isTwelveHour ? "h12" : "h23";
+  const clockOptions = { hour: "numeric", minute: "2-digit", hourCycle: hourCycle };
+  const clockFormat = new Intl.DateTimeFormat([], clockOptions);
+
+  function isNotDayPeriod(part) {
+    return part.type !== "dayPeriod";
+  }
+
+  function partValue(part) {
+    return part.value;
+  }
+
+  // Shows the visitor's local time in their region's clock format, without AM/PM.
+  function updateClock() {
+    const parts = clockFormat.formatToParts(new Date());
+    const timeParts = parts.filter(isNotDayPeriod);
+    clock.textContent = timeParts.map(partValue).join("").trim();
+  }
+
+  function startMinuteTicks() {
+    updateClock();
+    setInterval(updateClock, 60000);
+  }
+
+  themeSwitch.addEventListener("click", toggleTheme);
   applyTheme(root.dataset.theme || "light");
+
+  updateClock();
+  const msToNextMinute = 60000 - (Date.now() % 60000);
+  setTimeout(startMinuteTicks, msToNextMinute);
+
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
