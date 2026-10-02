@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AdMobile – AdMob Metrics for Android</title>
+<meta name="description" content="Check your AdMob earnings, clicks, impressions, and eCPM across apps and countries, right from your Android phone.">
+<link rel="canonical" href="https://wixel.dev/apps/admobile/">
+<link rel="icon" type="image/png" href="images/icon.png">
+<meta name="theme-color" content="#111716" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F3F6F5" media="(prefers-color-scheme: light)">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AdMobile – AdMob Metrics for Android">
+<meta property="og:description" content="Your AdMob earnings, one tap away.">
+<meta property="og:url" content="https://wixel.dev/apps/admobile/">
+<meta property="og:image" content="https://wixel.dev/apps/admobile/images/icon.png">
+
+<!-- Applies the theme chosen on wixel.dev, or the system theme, before first paint. -->
+<script>
+  (function () {
+    var theme = null;
+    try { theme = localStorage.getItem("theme"); } catch (e) {}
+    if (theme !== "light" && theme !== "dark") {
+      var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      theme = prefersDark ? "dark" : "light";
+    }
+    document.documentElement.dataset.theme = theme;
+  })();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght,ROND@6..144,400..900,0..100&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="wrap">
+
+  <main>
+
+    <header class="hero">
+      <div>
+        <img class="app-icon" src="images/icon.png" alt="" width="80" height="80">
+        <h1 class="app-name">AdMobile</h1>
+        <p class="tagline">Your AdMob earnings, one tap away.</p>
+        <p class="intro">
+          Check earnings, clicks, impressions, and eCPM across your apps
+          and countries, right from your phone or home screen.
+        </p>
+        <div class="actions">
+          <a class="play-badge" href="https://play.google.com/store/apps/details?id=io.stark.admob">
+            <img src="images/google-play-badge.png" alt="Get it on Google Play" width="646" height="250">
+          </a>
+          <a class="text-link" href="policy/">Privacy policy</a>
+        </div>
+      </div>
+
+      <figure class="showcase">
+        <img class="screenshot" src="images/screenshot.png" width="584" height="1080"
+             alt="AdMobile home screen showing today's AdMob earnings, clicks, and impressions, with reports by app and country">
+      </figure>
+    </header>
+
+    <section aria-labelledby="features-title">
+      <h2 id="features-title">Everything in one place</h2>
+      <dl class="features">
+        <div>
+          <dt>Network report</dt>
+          <dd>Earnings, clicks, impressions, and eCPM for your whole AdMob account.</dd>
+        </div>
+        <div>
+          <dt>Apps report</dt>
+          <dd>See how each of your apps performs, side by side.</dd>
+        </div>
+        <div>
+          <dt>Countries report</dt>
+          <dd>Find out where your revenue comes from.</dd>
+        </div>
+        <div>
+          <dt>Home screen widget</dt>
+          <dd>Keep your key numbers on your home screen.</dd>
+        </div>
+        <div>
+          <dt>Custom report</dt>
+          <dd>Choose the metrics you care about and build your own view.</dd>
+        </div>
+        <div>
+          <dt>Custom date range</dt>
+          <dd>Today, yesterday, this month, last month, or any range you pick.</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="privacy" aria-labelledby="privacy-title">
+      <h2 id="privacy-title">Your data stays yours</h2>
+      <p>AdMobile only reads your reports. It can't change anything in your account.</p>
+      <ul>
+        <li>Read-only access to your AdMob and AdSense reports.</li>
+        <li>No personal information is saved.</li>
+        <li>Sign out completely and revoke access whenever you want.</li>
+        <li>All connections are encrypted.</li>
+      </ul>
+      <a class="text-link" href="policy/">Read the privacy policy</a>
+    </section>
+
+  </main>
+
+  <footer>
+    <span>© <span id="year">2026</span> Wixel Store</span>
+    <a href="../../">wixel.dev</a>
+    <a href="policy/">Privacy policy</a>
+  </footer>
+
+</div>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
