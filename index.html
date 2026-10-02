@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jahongir · Android developer</title>
+<meta name="description" content="Jahongir, Android developer building fast, responsive, memory-efficient apps.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📱</text></svg>">
+
+<!-- Applies the saved or system theme before first paint to avoid a flash. -->
+<script>
+  (function () {
+    var theme = null;
+    try { theme = localStorage.getItem("theme"); } catch (e) {}
+    if (theme !== "light" && theme !== "dark") {
+      var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      theme = prefersDark ? "dark" : "light";
+    }
+    document.documentElement.dataset.theme = theme;
+  })();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght,ROND@6..144,400..900,0..100&family=Orbitron:wght@500..900&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main class="wrap">
+
+  <header class="hero">
+    <div>
+      <h1 class="name">Jahongir</h1>
+      <p class="role">Android developer</p>
+      <p class="intro">
+        I build fast, responsive Android apps that stay light on memory
+        and battery, and feel natural from the first tap.
+      </p>
+      <!-- Replace these with your real links. -->
+      <ul class="links">
+        <li><a href="https://github.com/wixeless">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/wixeless">LinkedIn</a></li>
+      </ul>
+    </div>
+
+    <figure class="device" aria-label="Theme switcher styled as a phone">
+      <div class="phone">
+        <div class="screen">
+          <div class="status" aria-hidden="true"><span>9:41</span><span class="camera"></span><span>100%</span></div>
+          <div class="sky" aria-hidden="true"><span class="orb"></span></div>
+          <button class="setting" id="theme-switch" type="button" role="switch" aria-checked="false">
+            <span>Dark theme</span>
+            <span class="track" aria-hidden="true"><span class="knob"></span></span>
+          </button>
+          <pre class="code" aria-hidden="true">AppCompatDelegate
+  .setDefaultNightMode(
+    <b id="night-mode">MODE_NIGHT_NO</b>
+  )</pre>
+        </div>
+      </div>
+      <figcaption class="caption">Flip the switch. Day/Night theming is part of what I build.</figcaption>
+    </figure>
+  </header>
+
+  <section class="about" aria-labelledby="about-title">
+    <h2 id="about-title">About</h2>
+    <p>
+      I've been building Android apps for more than eight years. I focus on
+      clean architecture, smooth UI, and apps that work well across Android
+      versions and screen sizes. I take ownership of what I ship and aim for
+      quality in every release.
+    </p>
+  </section>
+
+  <section aria-labelledby="skills-title">
+    <h2 id="skills-title">What I work with</h2>
+    <dl class="skills">
+      <div>
+        <dt>Kotlin</dt>
+        <dd>Coroutines and Flow, with a solid grasp of OOP, collections, and multithreading.</dd>
+      </div>
+      <div>
+        <dt>Architecture</dt>
+        <dd>Single Activity, Clean Architecture, MVVM and MVI, and multi-module projects built on Jetpack ViewModel, Lifecycle, and Navigation 3.</dd>
+      </div>
+      <div>
+        <dt>Dependency injection</dt>
+        <dd>Hilt and Koin.</dd>
+      </div>
+      <div>
+        <dt>Networking and data</dt>
+        <dd>Retrofit, OkHttp, Kotlin Serialization, Room, and Paging 3. SharedPreferences and DataStore encrypted with Tink.</dd>
+      </div>
+      <div>
+        <dt>UI</dt>
+        <dd>Jetpack Compose, Material 3, custom views, themes and styles, Day/Night mode, edge-to-edge, adaptive layouts for tablets and foldables, and image loading with Coil.</dd>
+      </div>
+      <div>
+        <dt>Graphics and AI</dt>
+        <dd>OpenGL rendering and on-device AI with LiteRT and MediaPipe.</dd>
+      </div>
+      <div>
+        <dt>Android platform</dt>
+        <dd>Services and WorkManager across many API levels and screen sizes, plus Wear OS apps.</dd>
+      </div>
+      <div>
+        <dt>Google and Firebase</dt>
+        <dd>Maps, Places, Location, AdMob, and Google Ad Manager, plus Firebase Auth, Database, Cloud Messaging, Analytics, and Crashlytics.</dd>
+      </div>
+      <div>
+        <dt>Tooling</dt>
+        <dd>Git, Gradle version catalogs, KSP, and CI/CD pipelines.</dd>
+      </div>
+    </dl>
+  </section>
+
+  <section class="contact" aria-labelledby="contact-title">
+    <h2 id="contact-title">Get in touch</h2>
+    <p>Have an Android project or a role in mind? Reach out on LinkedIn or check my work on GitHub.</p>
+    <ul class="links">
+      <li><a href="https://www.linkedin.com/in/your-profile">LinkedIn</a></li>
+      <li><a href="https://github.com/your-username">GitHub</a></li>
+    </ul>
+  </section>
+
+  <footer>© <span id="year">2026</span> Jahongir</footer>
+
+</main>
+
+<script>
+  const root = document.documentElement;
+  const themeSwitch = document.getElementById("theme-switch");
+  const nightMode = document.getElementById("night-mode");
+
+  // Syncs the switch and the code sample with the current theme.
+  function applyTheme(theme) {
+    const isDark = theme === "dark";
+    root.dataset.theme = theme;
+    themeSwitch.setAttribute("aria-checked", String(isDark));
+    nightMode.textContent = isDark ? "MODE_NIGHT_YES" : "MODE_NIGHT_NO";
+  }
+
+  themeSwitch.addEventListener("click", function () {
+    const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
+    applyTheme(nextTheme);
+    try { localStorage.setItem("theme", nextTheme); } catch (e) {}
+  });
+
+  applyTheme(root.dataset.theme || "light");
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
