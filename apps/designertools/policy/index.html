@@ -49,14 +49,16 @@
 
     <h2>Permissions used in the app</h2>
     <ul>
-      <li><code>android.permission.WRITE_EXTERNAL_STORAGE</code> is used to save mockup images.</li>
+      <li><code>android.permission.WRITE_EXTERNAL_STORAGE</code> is used to save mockup images and show them on the mockup overlay screen.</li>
+      <li><code>android.permission.SYSTEM_ALERT_WINDOW</code> is used to show the overlay screen over other apps.</li>
+      <li><code>android.permission.FOREGROUND_SERVICE</code> is used to keep the Color Picker, Mockup Overlay, and Grid Overlay services active while the app is closed.</li>
     </ul>
 
-    <h2>Accessibility service</h2>
+    <h2>AccessibilityService API</h2>
     <p>
-      The app uses the AccessibilityService API to display a floating panel, so you
-      can use its tools while working in other apps. No data is collected or shared
-      using the AccessibilityService API.
+      The app uses the AccessibilityService API to display a floating popup for
+      multitasking purposes. No data is collected or shared using the
+      AccessibilityService API.
     </p>
 
     <h2>What information does the app obtain and how is it used?</h2>
