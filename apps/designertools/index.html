@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Designer Tools Pro</title>
+<meta name="description" content="Check grids, mockups, and colors over any app on your Android phone. Grid overlay, mockup overlay, and a pixel-level color picker.">
+<link rel="canonical" href="https://wixel.dev/apps/designertools/">
+<link rel="icon" type="image/png" href="images/icon.png">
+<meta name="theme-color" content="#1E2524" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F1F4F3" media="(prefers-color-scheme: light)">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Designer Tools Pro">
+<meta property="og:description" content="Check every pixel against the spec.">
+<meta property="og:url" content="https://wixel.dev/apps/designertools/">
+<meta property="og:image" content="https://wixel.dev/apps/designertools/images/icon.png">
+
+<!-- Applies the theme chosen on wixel.dev, or the system theme, before first paint. -->
+<script>
+  (function () {
+    var theme = null;
+    try { theme = localStorage.getItem("theme"); } catch (e) {}
+    if (theme !== "light" && theme !== "dark") {
+      var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      theme = prefersDark ? "dark" : "light";
+    }
+    document.documentElement.dataset.theme = theme;
+  })();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght,ROND@6..144,400..900,0..100&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="wrap">
+
+  <main>
+
+    <header class="hero">
+      <div>
+        <img class="app-icon" src="images/icon.png" alt="" width="80" height="80">
+        <h1 class="app-name">Designer Tools Pro</h1>
+        <p class="tagline">Check every pixel against the spec.</p>
+        <p class="intro">
+          Lay grids, mockups, and a color picker over any app on your phone.
+          Even with redlines in hand, it's the quickest way to verify a build.
+        </p>
+        <div class="actions">
+          <a class="play-badge" href="https://play.google.com/store/apps/details?id=kg.stark.designertools">
+            <img src="images/google-play-badge.png" alt="Get it on Google Play" width="646" height="250">
+          </a>
+          <a class="text-link" href="policy/">Privacy policy</a>
+        </div>
+      </div>
+
+      <figure class="showcase">
+        <div class="stage">
+          <div class="phone">
+            <div class="screen" id="screen">
+              <div class="mock" aria-hidden="true">
+                <div class="mock-bar" data-swatch="#3F4947"></div>
+                <div class="mock-image" data-swatch="#B1CCC9"></div>
+                <div class="mock-title" data-swatch="#1B2422"></div>
+                <div class="mock-text" data-swatch="#A3AFAC"></div>
+                <div class="mock-text mock-text-short" data-swatch="#A3AFAC"></div>
+                <div class="mock-row">
+                  <div class="mock-chip" data-swatch="#E8C261"></div>
+                  <div class="mock-chip mock-chip-soft" data-swatch="#F6E7BE"></div>
+                </div>
+                <div class="mock-button" data-swatch="#006A64"></div>
+              </div>
+
+              <div class="grid" id="grid" aria-hidden="true"></div>
+
+              <div class="loupe" id="loupe" tabindex="0" role="application"
+                   aria-label="Color picker loupe. Drag it, or use the arrow keys to move it.">
+                <span class="loupe-lens" id="loupe-lens"></span>
+                <span class="loupe-hex" id="loupe-hex" aria-live="polite">#006A64</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="setting" id="grid-switch" type="button" role="switch" aria-checked="true">
+          <span>Grid overlay</span>
+          <span class="track" aria-hidden="true"><span class="knob"></span></span>
+        </button>
+        <figcaption class="caption">Drag the loupe to read a color. The grid shows the keylines.</figcaption>
+      </figure>
+    </header>
+
+    <section aria-labelledby="features-title">
+      <h2 id="features-title">Three tools, one floating panel</h2>
+      <dl class="features">
+        <div>
+          <dt>Grid overlay</dt>
+          <dd>Toggle an on-screen grid to catch uneven spacing and misaligned elements. Set the grid size and the line and keyline colors.</dd>
+        </div>
+        <div>
+          <dt>Mockup overlay</dt>
+          <dd>Show a design mockup over your app and tune its opacity to compare the two. Portrait or landscape, with adjustable position.</dd>
+        </div>
+        <div>
+          <dt>Color picker</dt>
+          <dd>Drag a magnifier loupe to read the hex code of any pixel. Tap the code to copy it.</dd>
+        </div>
+        <div>
+          <dt>Works over any app</dt>
+          <dd>A floating panel lets you switch tools without leaving the app you're checking.</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="privacy" aria-labelledby="privacy-title">
+      <h2 id="privacy-title">Your screen stays yours</h2>
+      <p>Designer Tools Pro uses the Accessibility service only to show its floating panel.</p>
+      <ul>
+        <li>No data is collected or shared through the Accessibility service.</li>
+        <li>No data is shared with third parties.</li>
+        <li>Mockup images are saved on your device.</li>
+        <li>All connections are encrypted.</li>
+      </ul>
+      <a class="text-link" href="policy/">Read the privacy policy</a>
+    </section>
+
+  </main>
+
+  <footer>
+    <span>© <span id="year">2026</span> Wixel Store</span>
+    <a href="../../">wixel.dev</a>
+    <a href="policy/">Privacy policy</a>
+  </footer>
+
+</div>
+
+<script>
+  const screenArea = document.getElementById("screen");
+  const loupe = document.getElementById("loupe");
+  const loupeLens = document.getElementById("loupe-lens");
+  const loupeHex = document.getElementById("loupe-hex");
+  const swatches = screenArea.querySelectorAll("[data-swatch]");
+  const screenColor = "#FFFFFF";
+  const keyStep = 8;
+
+  // Loupe center, relative to the screen's top-left corner.
+  let loupeX = 0;
+  let loupeY = 0;
+  let isDragging = false;
+
+  function clamp(value, min, max) {
+    return Math.min(Math.max(value, min), max);
+  }
+
+  function containsPoint(rect, x, y) {
+    return x >= rect.left && x <= rect.right && y >= rect.top && y <= rect.bottom;
+  }
+
+  // Returns the hex color of the mock element under the given page point.
+  function colorAt(pageX, pageY) {
+    let color = screenColor;
+    for (const swatch of swatches) {
+      const rect = swatch.getBoundingClientRect();
+      if (containsPoint(rect, pageX, pageY)) {
+        color = swatch.dataset.swatch;
+      }
+    }
+    return color;
+  }
+
+  function moveLoupe(x, y) {
+    const screenRect = screenArea.getBoundingClientRect();
+    loupeX = clamp(x, 0, screenRect.width);
+    loupeY = clamp(y, 0, screenRect.height);
+    loupe.style.left = loupeX + "px";
+    loupe.style.top = loupeY + "px";
+
+    const color = colorAt(screenRect.left + loupeX, screenRect.top + loupeY);
+    loupeLens.style.backgroundColor = color;
+    loupeHex.textContent = color;
+  }
+
+  function moveLoupeToPointer(event) {
+    const screenRect = screenArea.getBoundingClientRect();
+    moveLoupe(event.clientX - screenRect.left, event.clientY - screenRect.top);
+  }
+
+  function startDrag(event) {
+    isDragging = true;
+    screenArea.setPointerCapture(event.pointerId);
+    moveLoupeToPointer(event);
+  }
+
+  function drag(event) {
+    if (isDragging) {
+      moveLoupeToPointer(event);
+    }
+  }
+
+  function endDrag() {
+    isDragging = false;
+  }
+
+  function moveLoupeWithKeys(event) {
+    const offsets = {
+      ArrowLeft: [-keyStep, 0],
+      ArrowRight: [keyStep, 0],
+      ArrowUp: [0, -keyStep],
+      ArrowDown: [0, keyStep]
+    };
+    const offset = offsets[event.key];
+    if (!offset) {
+      return;
+    }
+    event.preventDefault();
+    moveLoupe(loupeX + offset[0], loupeY + offset[1]);
+  }
+
+  // Starts the loupe over the button of the mock app.
+  function placeLoupeOnButton() {
+    const screenRect = screenArea.getBoundingClientRect();
+    const buttonRect = screenArea.querySelector(".mock-button").getBoundingClientRect();
+    const centerX = buttonRect.left + buttonRect.width * 0.7 - screenRect.left;
+    const centerY = buttonRect.top + buttonRect.height / 2 - screenRect.top;
+    moveLoupe(centerX, centerY);
+  }
+
+  const grid = document.getElementById("grid");
+  const gridSwitch = document.getElementById("grid-switch");
+
+  function toggleGrid() {
+    const isOn = gridSwitch.getAttribute("aria-checked") !== "true";
+    gridSwitch.setAttribute("aria-checked", String(isOn));
+    grid.hidden = !isOn;
+  }
+
+  screenArea.addEventListener("pointerdown", startDrag);
+  screenArea.addEventListener("pointermove", drag);
+  screenArea.addEventListener("pointerup", endDrag);
+  screenArea.addEventListener("pointercancel", endDrag);
+  loupe.addEventListener("keydown", moveLoupeWithKeys);
+  gridSwitch.addEventListener("click", toggleGrid);
+  window.addEventListener("resize", placeLoupeOnButton);
+
+  placeLoupeOnButton();
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
