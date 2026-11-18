@@ -299,6 +299,11 @@ h2 {
   margin: 0;
 }
 
+.ad-slot {
+  padding-block: clamp(1.5rem, 4vh, 2.5rem);
+  border-top: 1px solid var(--line);
+}
+
 .apps-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
