@@ -1,267 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Jahongir · Android developer</title>
-<meta name="description" content="Jahongir, Android developer building fast, responsive, memory-efficient apps.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📱</text></svg>">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Jahongir · Android developer</title>
+  <meta name="description" content="Jahongir, Android developer building fast, responsive, memory-efficient apps.">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📱</text></svg>">
 
-<!-- Applies the saved or system theme before first paint to avoid a flash. -->
-<script>
-  (function () {
-    var theme = null;
-    try { theme = localStorage.getItem("theme"); } catch (e) {}
-    if (theme !== "light" && theme !== "dark") {
-      var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      theme = prefersDark ? "dark" : "light";
-    }
-    document.documentElement.dataset.theme = theme;
-  })();
-</script>
+  <!-- Applies the saved or system theme before first paint to avoid a flash. -->
+  <script>
+    (function () {
+      var theme = null;
+      try { theme = localStorage.getItem("theme"); } catch (e) { }
+      if (theme !== "light" && theme !== "dark") {
+        var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        theme = prefersDark ? "dark" : "light";
+      }
+      document.documentElement.dataset.theme = theme;
+    })();
+  </script>
 
-<!-- Yandex.RTB & Autoplacement 20341322 -->
-<script>window.yaContextCb=window.yaContextCb||[]</script>
-<script src="https://yandex.ru/ads/system/context.js" async></script>
-<script data-page-id="20341322" src="https://yandex.ru/ads/system/ap-loader.js" async></script>
+  <!-- Yandex.RTB & Autoplacement 20341322 -->
+  <script>window.yaContextCb = window.yaContextCb || []</script>
+  <script src="https://yandex.ru/ads/system/context.js" async></script>
+  <script data-page-id="20341322" src="https://yandex.ru/ads/system/ap-loader.js" async></script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght,ROND@6..144,400..900,0..100&family=Orbitron:wght@500..900&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-    (function(m,e,t,r,i,k,a){
-        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();
-        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=114090503', 'ym');
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght,ROND@6..144,400..900,0..100&family=Orbitron:wght@500..900&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+      (function (m, e, t, r, i, k, a) {
+        m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+        m[i].l = 1 * new Date();
+        for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+        k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+      })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=114090503', 'ym');
 
-    ym(114090503, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/114090503" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
+    ym(114090503, 'init', { ssr: true, webvisor: true, clickmap: true, ecommerce: "dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce: true, trackLinks: true });
+  </script>
+  <noscript>
+    <div><img src="https://mc.yandex.ru/watch/114090503" style="position:absolute; left:-9999px;" alt="" /></div>
+  </noscript>
+  <!-- /Yandex.Metrika counter -->
 </head>
+
 <body>
 
-<main class="wrap">
+  <main class="wrap">
 
-  <header class="hero">
-    <div>
-      <h1 class="name">Jahongir</h1>
-      <p class="role">Android developer</p>
-      <p class="intro">
-        I build fast, responsive Android apps that stay light on memory
-        and battery, and feel natural from the first tap.
-      </p>
-      <ul class="links">
-        <li><a href="https://github.com/wixeless">GitHub</a></li>
-        <li><a href="https://www.linkedin.com">LinkedIn</a></li>
-      </ul>
-    </div>
+    <header class="hero">
+      <div>
+        <h1 class="name">Jahongir</h1>
+        <p class="role">Android developer</p>
+        <p class="intro">
+          I build fast, responsive Android apps that stay light on memory
+          and battery, and feel natural from the first tap.
+        </p>
+        <ul class="links">
+          <li><a href="https://github.com/wixeless">GitHub</a></li>
+          <li><a href="https://www.linkedin.com">LinkedIn</a></li>
+        </ul>
+      </div>
 
-    <figure class="device" aria-label="Theme switcher styled as a phone">
-      <div class="phone">
-        <div class="screen">
-          <div class="status" aria-hidden="true"><span id="clock">12:00</span><span class="camera"></span><span>100%</span></div>
-          <div class="sky" aria-hidden="true"><span class="orb"></span></div>
-          <button class="setting" id="theme-switch" type="button" role="switch" aria-checked="false">
-            <span>Dark theme</span>
-            <span class="track" aria-hidden="true"><span class="knob"></span></span>
-          </button>
-          <pre class="code" aria-hidden="true">AppCompatDelegate
+      <figure class="device" aria-label="Theme switcher styled as a phone">
+        <div class="phone">
+          <div class="screen">
+            <div class="status" aria-hidden="true"><span id="clock">12:00</span><span
+                class="camera"></span><span>100%</span></div>
+            <div class="sky" aria-hidden="true"><span class="orb"></span></div>
+            <button class="setting" id="theme-switch" type="button" role="switch" aria-checked="false">
+              <span>Dark theme</span>
+              <span class="track" aria-hidden="true"><span class="knob"></span></span>
+            </button>
+            <pre class="code" aria-hidden="true">AppCompatDelegate
   .setDefaultNightMode(
     <b id="night-mode">MODE_NIGHT_NO</b>
   )</pre>
+          </div>
         </div>
-      </div>
-      <figcaption class="caption">Flip the switch. Day/Night theming is part of what I build.</figcaption>
-    </figure>
-  </header>
+        <figcaption class="caption">Flip the switch. Day/Night theming is part of what I build.</figcaption>
+      </figure>
+    </header>
 
-  <section class="about" aria-labelledby="about-title">
-    <h2 id="about-title">About</h2>
-    <p>
-      I've been building Android apps for more than eight years. I focus on
-      clean architecture, smooth UI, and apps that work well across Android
-      versions and screen sizes. I take ownership of what I ship and aim for
-      quality in every release.
-    </p>
-  </section>
+    <section class="about" aria-labelledby="about-title">
+      <h2 id="about-title">About</h2>
+      <p>
+        I've been building Android apps for more than eight years. I focus on
+        clean architecture, smooth UI, and apps that work well across Android
+        versions and screen sizes. I take ownership of what I ship and aim for
+        quality in every release.
+      </p>
+    </section>
 
-  <!-- Yandex.RTB R-A-20341322-9 -->
-  <div class="ad-slot" aria-label="Advertisement">
-    <div id="yandex_rtb_R-A-20341322-9"></div>
-    <script>
-      window.yaContextCb.push(() => {
-        Ya.Context.AdvManager.render({
-          "blockId": "R-A-20341322-9",
-          "renderTo": "yandex_rtb_R-A-20341322-9"
-        });
-      });
-    </script>
-  </div>
+    <!-- Yandex.RTB R-A-20341322-9 -->
+    <div class="ad-slot" aria-label="Advertisement">
+      <!-- Yandex.RTB R-A-20341322-9 -->
+      <div id="yandex_rtb_R-A-20341322-9"></div>
+      <script>
+        window.yaContextCb.push(() => {
+          Ya.Context.AdvManager.render({
+            "blockId": "R-A-20341322-9",
+            "renderTo": "yandex_rtb_R-A-20341322-9"
+          })
+        })
+      </script>
+    </div>
 
-  <section aria-labelledby="apps-title">
-    <h2 id="apps-title">Apps</h2>
-    <ul class="apps-list">
-      <li>
-        <a class="app" href="apps/admobile/">
-          <img src="apps/admobile/images/icon.png" alt="" width="56" height="56">
-          <span>
-            <span class="app-name">AdMobile</span>
-            <span class="app-desc">Your AdMob earnings, one tap away.</span>
-          </span>
-        </a>
-      </li>
-      <li>
-        <a class="app" href="apps/designertools/">
-          <img src="apps/designertools/images/icon.png" alt="" width="56" height="56">
-          <span>
-            <span class="app-name">Designer Tools Pro</span>
-            <span class="app-desc">Check every pixel against the spec.</span>
-          </span>
-        </a>
-      </li>
-    </ul>
-  </section>
+    <section aria-labelledby="apps-title">
+      <h2 id="apps-title">Apps</h2>
+      <ul class="apps-list">
+        <li>
+          <a class="app" href="apps/admobile/">
+            <img src="apps/admobile/images/icon.png" alt="" width="56" height="56">
+            <span>
+              <span class="app-name">AdMobile</span>
+              <span class="app-desc">Your AdMob earnings, one tap away.</span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a class="app" href="apps/designertools/">
+            <img src="apps/designertools/images/icon.png" alt="" width="56" height="56">
+            <span>
+              <span class="app-name">Designer Tools Pro</span>
+              <span class="app-desc">Check every pixel against the spec.</span>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </section>
 
-  <section aria-labelledby="skills-title">
-    <h2 id="skills-title">What I work with</h2>
-    <dl class="skills">
-      <div>
-        <dt>Kotlin</dt>
-        <dd>Coroutines and Flow, with a solid grasp of OOP, collections, and multithreading.</dd>
-      </div>
-      <div>
-        <dt>Architecture</dt>
-        <dd>Single Activity, Clean Architecture, MVVM and MVI, and multi-module projects built on Jetpack ViewModel, Lifecycle, and Navigation 3.</dd>
-      </div>
-      <div>
-        <dt>Dependency injection</dt>
-        <dd>Hilt and Koin.</dd>
-      </div>
-      <div>
-        <dt>Networking and data</dt>
-        <dd>Retrofit, OkHttp, Kotlin Serialization, Room, and Paging 3. SharedPreferences and DataStore encrypted with Tink.</dd>
-      </div>
-      <div>
-        <dt>UI</dt>
-        <dd>Jetpack Compose, Material 3, custom views, themes and styles, Day/Night mode, edge-to-edge, adaptive layouts for tablets and foldables, and image loading with Coil.</dd>
-      </div>
-      <div>
-        <dt>Graphics and AI</dt>
-        <dd>OpenGL rendering and on-device AI with LiteRT and MediaPipe.</dd>
-      </div>
-      <div>
-        <dt>Android platform</dt>
-        <dd>Services and WorkManager across many API levels and screen sizes, plus Wear OS apps.</dd>
-      </div>
-      <div>
-        <dt>Google and Firebase</dt>
-        <dd>Maps, Places, Location, AdMob, and Google Ad Manager, plus Firebase Auth, Database, Cloud Messaging, Analytics, and Crashlytics.</dd>
-      </div>
-      <div>
-        <dt>Tooling</dt>
-        <dd>Git, Gradle version catalogs, KSP, and CI/CD pipelines.</dd>
-      </div>
-    </dl>
-  </section>
+    <section aria-labelledby="skills-title">
+      <h2 id="skills-title">What I work with</h2>
+      <dl class="skills">
+        <div>
+          <dt>Kotlin</dt>
+          <dd>Coroutines and Flow, with a solid grasp of OOP, collections, and multithreading.</dd>
+        </div>
+        <div>
+          <dt>Architecture</dt>
+          <dd>Single Activity, Clean Architecture, MVVM and MVI, and multi-module projects built on Jetpack ViewModel,
+            Lifecycle, and Navigation 3.</dd>
+        </div>
+        <div>
+          <dt>Dependency injection</dt>
+          <dd>Hilt and Koin.</dd>
+        </div>
+        <div>
+          <dt>Networking and data</dt>
+          <dd>Retrofit, OkHttp, Kotlin Serialization, Room, and Paging 3. SharedPreferences and DataStore encrypted with
+            Tink.</dd>
+        </div>
+        <div>
+          <dt>UI</dt>
+          <dd>Jetpack Compose, Material 3, custom views, themes and styles, Day/Night mode, edge-to-edge, adaptive
+            layouts for tablets and foldables, and image loading with Coil.</dd>
+        </div>
+        <div>
+          <dt>Graphics and AI</dt>
+          <dd>OpenGL rendering and on-device AI with LiteRT and MediaPipe.</dd>
+        </div>
+        <div>
+          <dt>Android platform</dt>
+          <dd>Services and WorkManager across many API levels and screen sizes, plus Wear OS apps.</dd>
+        </div>
+        <div>
+          <dt>Google and Firebase</dt>
+          <dd>Maps, Places, Location, AdMob, and Google Ad Manager, plus Firebase Auth, Database, Cloud Messaging,
+            Analytics, and Crashlytics.</dd>
+        </div>
+        <div>
+          <dt>Tooling</dt>
+          <dd>Git, Gradle version catalogs, KSP, and CI/CD pipelines.</dd>
+        </div>
+      </dl>
+    </section>
 
-  <section class="contact" aria-labelledby="contact-title">
-    <h2 id="contact-title">Get in touch</h2>
-    <p>Have an Android project or a role in mind? Reach out on LinkedIn or check my work on GitHub.</p>
-    <ul class="links">
-      <li><a href="https://www.linkedin.com">LinkedIn</a></li>
-      <li><a href="https://github.com/wixeless">GitHub</a></li>
-    </ul>
-  </section>
+    <section class="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Get in touch</h2>
+      <p>Have an Android project or a role in mind? Reach out on LinkedIn or check my work on GitHub.</p>
+      <ul class="links">
+        <li><a href="https://www.linkedin.com">LinkedIn</a></li>
+        <li><a href="https://github.com/wixeless">GitHub</a></li>
+      </ul>
+    </section>
 
-  <footer>© <span id="year">2026</span> Jahongir</footer>
+    <footer>© <span id="year">2026</span> Jahongir</footer>
 
-</main>
+  </main>
 
-<script>
-  const root = document.documentElement;
-  const themeSwitch = document.getElementById("theme-switch");
-  const nightMode = document.getElementById("night-mode");
+  <script>
+    const root = document.documentElement;
+    const themeSwitch = document.getElementById("theme-switch");
+    const nightMode = document.getElementById("night-mode");
 
-  // Syncs the switch and the code sample with the current theme.
-  function applyTheme(theme) {
-    const isDark = theme === "dark";
-    root.dataset.theme = theme;
-    themeSwitch.setAttribute("aria-checked", String(isDark));
-    nightMode.textContent = isDark ? "MODE_NIGHT_YES" : "MODE_NIGHT_NO";
-  }
-
-  function toggleTheme() {
-    const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
-    applyTheme(nextTheme);
-    try { localStorage.setItem("theme", nextTheme); } catch (e) {}
-  }
-
-  const clock = document.getElementById("clock");
-  // Time zones of regions where the 12-hour clock is the everyday format.
-  const twelveHourZones = new Set([
-    "America/New_York", "America/Chicago", "America/Denver", "America/Phoenix",
-    "America/Los_Angeles", "America/Anchorage", "America/Juneau", "America/Adak",
-    "America/Detroit", "America/Boise", "America/Menominee", "Pacific/Honolulu",
-    "America/Toronto", "America/Vancouver", "America/Edmonton", "America/Winnipeg",
-    "America/Halifax", "America/St_Johns", "America/Regina",
-    "Pacific/Auckland", "Asia/Kolkata", "Asia/Calcutta", "Asia/Karachi",
-    "Asia/Dhaka", "Asia/Manila", "Africa/Cairo"
-  ]);
-  const twelveHourZonePrefixes = [
-    "Australia/", "America/Indiana/", "America/Kentucky/", "America/North_Dakota/"
-  ];
-
-  function usesTwelveHourClock(timeZone) {
-    function hasPrefix(prefix) {
-      return timeZone.startsWith(prefix);
+    // Syncs the switch and the code sample with the current theme.
+    function applyTheme(theme) {
+      const isDark = theme === "dark";
+      root.dataset.theme = theme;
+      themeSwitch.setAttribute("aria-checked", String(isDark));
+      nightMode.textContent = isDark ? "MODE_NIGHT_YES" : "MODE_NIGHT_NO";
     }
 
-    if (twelveHourZones.has(timeZone)) {
-      return true;
+    function toggleTheme() {
+      const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
+      applyTheme(nextTheme);
+      try { localStorage.setItem("theme", nextTheme); } catch (e) { }
     }
-    return twelveHourZonePrefixes.some(hasPrefix);
-  }
 
-  const visitorTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-  const isTwelveHour = usesTwelveHourClock(visitorTimeZone);
-  const hourCycle = isTwelveHour ? "h12" : "h23";
-  const clockOptions = { hour: "numeric", minute: "2-digit", hourCycle: hourCycle };
-  const clockFormat = new Intl.DateTimeFormat([], clockOptions);
+    const clock = document.getElementById("clock");
+    // Time zones of regions where the 12-hour clock is the everyday format.
+    const twelveHourZones = new Set([
+      "America/New_York", "America/Chicago", "America/Denver", "America/Phoenix",
+      "America/Los_Angeles", "America/Anchorage", "America/Juneau", "America/Adak",
+      "America/Detroit", "America/Boise", "America/Menominee", "Pacific/Honolulu",
+      "America/Toronto", "America/Vancouver", "America/Edmonton", "America/Winnipeg",
+      "America/Halifax", "America/St_Johns", "America/Regina",
+      "Pacific/Auckland", "Asia/Kolkata", "Asia/Calcutta", "Asia/Karachi",
+      "Asia/Dhaka", "Asia/Manila", "Africa/Cairo"
+    ]);
+    const twelveHourZonePrefixes = [
+      "Australia/", "America/Indiana/", "America/Kentucky/", "America/North_Dakota/"
+    ];
 
-  function isNotDayPeriod(part) {
-    return part.type !== "dayPeriod";
-  }
+    function usesTwelveHourClock(timeZone) {
+      function hasPrefix(prefix) {
+        return timeZone.startsWith(prefix);
+      }
 
-  function partValue(part) {
-    return part.value;
-  }
+      if (twelveHourZones.has(timeZone)) {
+        return true;
+      }
+      return twelveHourZonePrefixes.some(hasPrefix);
+    }
 
-  // Shows the visitor's local time in their region's clock format, without AM/PM.
-  function updateClock() {
-    const parts = clockFormat.formatToParts(new Date());
-    const timeParts = parts.filter(isNotDayPeriod);
-    clock.textContent = timeParts.map(partValue).join("").trim();
-  }
+    const visitorTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    const isTwelveHour = usesTwelveHourClock(visitorTimeZone);
+    const hourCycle = isTwelveHour ? "h12" : "h23";
+    const clockOptions = { hour: "numeric", minute: "2-digit", hourCycle: hourCycle };
+    const clockFormat = new Intl.DateTimeFormat([], clockOptions);
 
-  function startMinuteTicks() {
+    function isNotDayPeriod(part) {
+      return part.type !== "dayPeriod";
+    }
+
+    function partValue(part) {
+      return part.value;
+    }
+
+    // Shows the visitor's local time in their region's clock format, without AM/PM.
+    function updateClock() {
+      const parts = clockFormat.formatToParts(new Date());
+      const timeParts = parts.filter(isNotDayPeriod);
+      clock.textContent = timeParts.map(partValue).join("").trim();
+    }
+
+    function startMinuteTicks() {
+      updateClock();
+      setInterval(updateClock, 60000);
+    }
+
+    themeSwitch.addEventListener("click", toggleTheme);
+    applyTheme(root.dataset.theme || "light");
+
     updateClock();
-    setInterval(updateClock, 60000);
-  }
+    const msToNextMinute = 60000 - (Date.now() % 60000);
+    setTimeout(startMinuteTicks, msToNextMinute);
 
-  themeSwitch.addEventListener("click", toggleTheme);
-  applyTheme(root.dataset.theme || "light");
-
-  updateClock();
-  const msToNextMinute = 60000 - (Date.now() % 60000);
-  setTimeout(startMinuteTicks, msToNextMinute);
-
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 
 </body>
+
 </html>
