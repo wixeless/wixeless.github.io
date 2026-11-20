@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Terms of Service – AdMobile</title>
+<meta name="description" content="Terms of service for AdMobile – AdMob Metrics, an Android app by Timur Myrzaev.">
+<link rel="canonical" href="https://wixel.dev/apps/admobile/terms/">
+<link rel="icon" type="image/png" href="../images/icon.png">
+<meta name="theme-color" content="#111716" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F3F6F5" media="(prefers-color-scheme: light)">
+
+<!-- Applies the theme chosen on wixel.dev, or the system theme, before first paint. -->
+<script>
+  (function () {
+    var theme = null;
+    try { theme = localStorage.getItem("theme"); } catch (e) {}
+    if (theme !== "light" && theme !== "dark") {
+      var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      theme = prefersDark ? "dark" : "light";
+    }
+    document.documentElement.dataset.theme = theme;
+  })();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght,ROND@6..144,400..900,0..100&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="doc-header">
+    <img src="../images/icon.png" alt="" width="40" height="40">
+    <a href="../">AdMobile</a>
+  </header>
+
+  <main class="doc">
+    <h1>Terms of service</h1>
+    <p class="lead">Terms and conditions for using AdMobile – AdMob Metrics.</p>
+
+    <h2>1. Acceptance of terms</h2>
+    <p>
+      By downloading, installing, or using AdMobile – AdMob Metrics ("app", "service"),
+      provided by Timur Myrzaev ("developer", "we", "us"), you agree to be bound by
+      these Terms of Service. If you do not agree to these terms, please do not use
+      the app.
+    </p>
+
+    <h2>2. Description of the service</h2>
+    <p>
+      AdMobile is an independent analytics dashboard and widget application for
+      Android and Wear OS that displays your advertising performance reports using
+      official Google APIs (AdMob API and AdSense API). AdMobile is not affiliated
+      with, sponsored by, or endorsed by Google LLC.
+    </p>
+
+    <h2>3. Google account and access</h2>
+    <p>
+      To view your real metrics, you must sign in with your Google account and grant
+      read-only access to your AdMob or AdSense data. You are responsible for
+      maintaining the security of your device and Google account. You may revoke the
+      app's access at any time via your
+      <a href="https://myaccount.google.com/permissions">Google Account permissions</a>.
+    </p>
+
+    <h2>4. Subscriptions, billing, and refunds</h2>
+    <p>
+      The app offers a free ad-supported version as well as optional paid
+      subscriptions ("Pro") that unlock additional features and remove advertisements.
+    </p>
+    <ul>
+      <li>All subscriptions and payments are billed and processed exclusively through Google Play.</li>
+      <li>Subscriptions automatically renew at the end of each billing period unless canceled at least 24 hours before the renewal date through your Google Play account settings.</li>
+      <li>Deleting or uninstalling the app does not automatically cancel an active subscription.</li>
+      <li>Refunds are handled in accordance with Google Play's refund policies and applicable consumer protection laws.</li>
+    </ul>
+
+    <h2>5. Acceptable use</h2>
+    <p>
+      You agree to use the app only for lawful purposes and in compliance with
+      Google's AdMob and AdSense terms. You may not reverse-engineer, decompile,
+      modify, redistribute, or attempt to bypass subscription checks or security
+      mechanisms of the app.
+    </p>
+
+    <h2>6. Data accuracy and disclaimer</h2>
+    <p>
+      All revenue, impression, and performance figures displayed in the app are
+      retrieved directly from Google's APIs. While we strive to present this data
+      accurately, the app is provided on an "as is" and "as available" basis without
+      warranties of any kind. We are not responsible for API downtime, reporting
+      delays, discrepancies between the app and the official Google AdMob/AdSense
+      web dashboards, or any business or financial decisions made based on the
+      displayed metrics.
+    </p>
+
+    <h2>7. Limitation of liability and consumer rights</h2>
+    <p>
+      To the maximum extent permitted by applicable law, the developer shall not be
+      liable for any indirect, incidental, special, or consequential damages arising
+      out of or related to your use of or inability to use the app.
+    </p>
+    <p>
+      Nothing in these Terms of Service excludes or limits any mandatory statutory
+      consumer rights you may have under the laws of your country of residence,
+      including consumers located in the European Economic Area (EEA) and the United
+      Kingdom (UK).
+    </p>
+
+    <h2>8. Privacy</h2>
+    <p>
+      Your use of the app is also governed by our
+      <a href="../policy/">Privacy Policy</a>, which explains how technical,
+      analytics, and advertising data is handled.
+    </p>
+
+    <h2>9. Changes to these terms</h2>
+    <p>
+      We may update these Terms of Service from time to time to reflect changes in
+      the app, legal requirements, or Google Play policies. Continued use of the app
+      after changes are posted on this page constitutes acceptance of the updated
+      terms.
+    </p>
+
+    <h2>10. Developer information and contact</h2>
+    <p>
+      <strong>Developer:</strong> Timur Myrzaev<br>
+      <strong>Address:</strong> 109 Thunder Cir, Bensalem, PA 19020-2144, United States<br>
+      <strong>Legal &amp; billing inquiries:</strong> <a href="mailto:wixelstore@gmail.com">wixelstore@gmail.com</a><br>
+      <strong>App support:</strong> <a href="mailto:wixeless@gmail.com">wixeless@gmail.com</a>
+    </p>
+  </main>
+
+  <footer>
+    <span>© <span id="year">2026</span> Wixel Store</span>
+    <a href="../">AdMobile</a>
+    <a href="../policy/">Privacy Policy</a>
+    <a href="../../../">wixel.dev</a>
+  </footer>
+
+</div>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

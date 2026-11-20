@@ -6,6 +6,7 @@
   --accent: #00866A;
   --ring: #FFC145;
   --line: #D3DDDA;
+  --code-ink: #B54708;
 
   --title: "Google Sans Flex", "Segoe UI", system-ui, sans-serif;
   --body: "Instrument Sans", "Segoe UI", system-ui, sans-serif;
@@ -30,6 +31,7 @@
   --accent: #3FD1A8;
   --ring: #FFC145;
   --line: #2A3633;
+  --code-ink: #F09A3E;
   color-scheme: dark;
 }
 
@@ -43,6 +45,7 @@
     --accent: #3FD1A8;
     --ring: #FFC145;
     --line: #2A3633;
+    --code-ink: #F09A3E;
     color-scheme: dark;
   }
 }
@@ -167,7 +170,14 @@ footer {
 .doc code {
   font-family: var(--mono);
   font-size: 0.85em;
+  color: var(--code-ink);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: 0.12em 0.4em;
   overflow-wrap: anywhere;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 
 .lead {
